@@ -25,8 +25,8 @@ implemented and MFA implemented to get an extra layer of security. This need to 
 
 Adding a strong password policy using the console, this can also be done using terraform or CDK.
 
-[Strong password configuration](./lib/docs/Password_Policy.png)
-[Securing root/management account](./lib/docs/root_account.png)
+![Strong password configuration](./lib/docs/Password_Policy.png)  
+![Securing root/management account](./lib/docs/root_account.png)
 
 Team Structure & Access Needs
 
@@ -55,7 +55,7 @@ The first group is for the developers:
     S3 access for application files
     CloudWatch logs viewing
 
-[Developers permissions](./lib/docs/Developers.png)
+![Developers permissions](./lib/docs/Developers.png)
 
 In this group, I’ve been giving the information and decided to give full access to EC2, read only to S3 and CloudWatch
 logs as we always want to give Principle of Least Privilege. If ever unsure, always talk to the client/company to what
@@ -67,7 +67,7 @@ Operations:
     Systems Manager access
     RDS management
 
-[Operations permissions](./lib/docs/Operations.png)
+![Operations permissions](./lib/docs/Operations.png)
 
 Finance:
 
@@ -75,14 +75,14 @@ Finance:
     AWS Budgets
     Read-only resource access
 
-[Finance permissions](./lib/docs/Finance.png)
+![Finance permissions](./lib/docs/Finance.png)
 
 Analysts:
 
     Read-only S3 access
     Read-only database access
 
-[Analysts permissions](./lib/docs/Analyst.png)
+![Analysts permissions](./lib/docs/Analyst.png)
 
 Each of these follow the Principle of Least Privilege and can always be changed in accordance with the companies requirements.
 
