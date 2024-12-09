@@ -1,10 +1,9 @@
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cdk from 'aws-cdk-lib';
-import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { DeveloperUserStack } from '../users/developer-users';
 
-export class DeveloperGroupStack extends Stack {
+export class DeveloperGroupStack extends cdk.Stack {
     public readonly devGroup: iam.Group;
     
     constructor(scope: Construct, id: string, props?: cdk.StackProps){

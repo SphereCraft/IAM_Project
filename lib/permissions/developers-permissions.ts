@@ -22,12 +22,11 @@ export class DeveloperPermissionStack extends cdk.Stack {
                         'logs:FilterLogEvents',
                         'logs:GetLogEvents',
 
-                    ],
+                        ],
                     resources: ['*'],
                 }),
             ],
         });
-        
         developerGroupStack.devGroup.addManagedPolicy(devPolicy);
     }
 }
