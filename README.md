@@ -88,7 +88,7 @@ Each of these follow the Principle of Least Privilege and can always be changed 
 
 ## Conclusion
 
-Security is of upmost importance and securing the main management account and giving everyone their own accounts with their own
+Security is of utmost importance and securing the main management account and giving everyone their own accounts with their own
 permissions to the things they need to do their jobs is paramount for the security of the company.
 
 The security choices I have made have been done with the mindset of Principle of Least Privilege with the information that has
@@ -97,7 +97,9 @@ or Terraform would be a better approach and one i will be implementing.
 
 ## Implementation of IAM users and group with permissions via CDK Typescript
 
-The first 2 file are, again, modular in design for the ease of maintenance and re useability. 
-First is the group creation for the Developers. Again keeping everything modular instead of one big file. Kepp it simple, keep it clean.  
-Second file for the creation of users with it set up to force a reset of password on first login. Names can all be adjusted to suit.
+The first 2 file are, again, modular in design for the ease of maintenance and reuse ability. 
+First is the group creation for the Developers. Again keeping everything modular instead of one big file. Keep it simple, keep it clean.  
+Second file for the creation of users with it set up to force a reset of password on first login. Names can all be adjusted to suit.  
+
+Have Added the separate permissions file, all connected and instantiated in the main app file in the bin directory.
 
