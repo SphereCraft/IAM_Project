@@ -94,3 +94,10 @@ permissions to the things they need to do their jobs is paramount for the securi
 The security choices I have made have been done with the mindset of Principle of Least Privilege with the information that has
 been given. Doing this through the console is OK, but it is subject to more human error. Moving onward using CDK and Typescript
 or Terraform would be a better approach and one i will be implementing.
+
+## Implementation of IAM users and group with permissions via CDK Typescript
+
+The first 2 file are, again, modular in design for the ease of maintenance and re useability. 
+First is the group creation for the Developers. Again keeping everything modular instead of one big file. Kepp it simple, keep it clean.  
+Second file for the creation of users with it set up to force a reset of password on first login. Names can all be adjusted to suit.
+
