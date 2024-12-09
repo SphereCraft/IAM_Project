@@ -5,6 +5,8 @@ import { Construct } from 'constructs';
 import { DeveloperUserStack } from '../users/developer-users';
 
 export class DeveloperGroupStack extends Stack {
+    public readonly devGroup: iam.Group;
+    
     constructor(scope: Construct, id: string, props?: cdk.StackProps){
         super(scope, id, props);
 

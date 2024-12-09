@@ -1,20 +1,18 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { IamProjectStack } from '../lib/iam-project-stack';
+import { DeveloperGroupStack } from '../lib/Groups/developers-group';
+import { DeveloperUserStack } from '../lib/users/developer-users';
+import { DeveloperPermissionStack } from '../lib/permissions/developers-permissions';
 
 const app = new cdk.App();
-new IamProjectStack(app, 'IamProjectStack', {
-  /* If you don't specify 'env', this stack will be environment-agnostic.
-   * Account/Region-dependent features and context lookups will not work,
-   * but a single synthesized template can be deployed anywhere. */
 
-  /* Uncomment the next line to specialize this stack for the AWS Account
-   * and Region that are implied by the current CLI configuration. */
-  // env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
+const env = {
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: process.env.CDK_DEFAULT_REGION,
+}
 
-  /* Uncomment the next line if you know exactly what Account and Region you
-   * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
+new DeveloperGroupStack(app, 'DeveloperGroupStack', { env });
 
-  /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
-});
+new DeveloperUserStack(app, 'DeveloperUserStack', { env });
+
+new DeveloperPermissionStack(app, 'DeveloperPermissionStack', { env });
