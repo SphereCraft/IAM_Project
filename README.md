@@ -8,7 +8,7 @@ This practice started when they were moving quickly to launch, but now their CTO
 
 As I see there are a few potential risks within their security and IAM policies.
 
-[Current Architecture](./lib/docs/StartUpCoProject.drawio.png)
+![Current Architecture](./lib/docs/StartUpCoProject.drawio.png)
 
 Team Structure & Access Needs
 
