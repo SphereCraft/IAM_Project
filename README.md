@@ -101,5 +101,10 @@ The first 2 file are, again, modular in design for the ease of maintenance and r
 First is the group creation for the Developers. Again keeping everything modular instead of one big file. Keep it simple, keep it clean.  
 Second file for the creation of users with it set up to force a reset of password on first login. Names can all be adjusted to suit.  
 
-Have Added the separate permissions file, all connected and instantiated in the main app file in the bin directory.
+Have Added the separate permissions file, all connected and instantiated in the main app file in the bin directory.  
+
+*** Updated code ***  
+Have ironed out the bugs in circular dependencies and added random password generation for the initial user setups, then a force reset of
+password on first login. Added new group with permissions that can be fine grained controlled with instructions from the client.  
+Next will need to set up the same for all the other groups within the company.
 

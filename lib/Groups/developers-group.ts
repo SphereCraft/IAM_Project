@@ -1,23 +1,21 @@
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { DeveloperUserStack } from '../users/developer-users';
+
+export interface DeveloperGroupProps extends cdk.StackProps {
+    users: iam.User[];
+}
 
 export class DeveloperGroupStack extends cdk.Stack {
     public readonly devGroup: iam.Group;
     
-    constructor(scope: Construct, id: string, props?: cdk.StackProps){
+    constructor(scope: Construct, id: string, props?: DeveloperGroupProps) {
         super(scope, id, props);
 
-        const devGroup = new iam.Group(this, 'DevGroup', {
+        this.devGroup = new iam.Group(this, 'DevGroup', {
             groupName: 'Developers', 
         });
 
-        const developerUserStack = new DeveloperUserStack(scope, 'DeveloperUserStack');
-
-        devGroup.addUser(developerUserStack.developer1);
-        devGroup.addUser(developerUserStack.developer2);
-        devGroup.addUser(developerUserStack.developer3);
-        devGroup.addUser(developerUserStack.developer4);
+        props?.users.forEach(user => this.devGroup.addUser(user));
     }
 }

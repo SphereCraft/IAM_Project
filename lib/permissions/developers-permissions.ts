@@ -1,14 +1,14 @@
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as cdk from 'aws-cdk-lib';
-import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs'; 
-import { DeveloperGroupStack } from '../Groups/developers-group';
+
+export interface DeveloperPermissionProps extends cdk.StackProps {
+    group: iam.Group;
+}
 
 export class DeveloperPermissionStack extends cdk.Stack {
-    constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+    constructor(scope: Construct, id: string, props: DeveloperPermissionProps) {
         super(scope, id, props);
-
-        const developerGroupStack = new DeveloperGroupStack(scope, 'DeveloperGroupStack');
 
         const devPolicy = new iam.ManagedPolicy(this, 'DevPolicy', {
             managedPolicyName: 'DeveloperAccessPolicy',
@@ -27,6 +27,6 @@ export class DeveloperPermissionStack extends cdk.Stack {
                 }),
             ],
         });
-        developerGroupStack.devGroup.addManagedPolicy(devPolicy);
+        props.group.addManagedPolicy(devPolicy);
     }
 }
