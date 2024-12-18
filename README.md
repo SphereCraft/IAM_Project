@@ -1,12 +1,3 @@
-## New beginings
-
-After a major misstep with a command, I ended up accidentally deleting most of the files on my PC. In the process,
-I managed to salvage what I could for this repository. I had been considering starting over anyway, as some of the
-earlier pushes had gone awry. As a Linux user with my configuration files not fully backed up, I had no choice but
-to rebuild from scratch. I reinstalled Linux and began reconfiguring my software setup (fortunately, I run a minimal
-and straightforward configuration). After two days of work, I’m nearly back to where I was. This marks the restart of
-the project, and there are only a few files left that need to be rewritten. A valuable lesson learned!  
-
 StartupCo, a fast-growing tech startup that recently launched their first product — a fitness tracking application.
 They’ve been using AWS for three months, initially setting up their infrastructure quickly to meet launch deadlines.
 Now that their product is live, they need to address their cloud security fundamentals. The company has 10 employees
