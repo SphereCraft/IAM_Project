@@ -7,6 +7,8 @@ import { OperationsGroupStack } from '../lib/groups/operations-groups';
 import { OperationPermissionStack } from '../lib/permissions/operations-permissions';
 import { FinanceGroupStack } from '../lib/groups/finance-group';
 import { FinancePermissionStack } from '../lib/permissions/finance-permissions';
+import { AnalystGroupStack } from '../lib/groups/analyst-group';
+import { AnalystPermissionStack } from '../lib/permissions/analyst-permissions';
 
 
 const app = new cdk.App();
@@ -58,4 +60,19 @@ const finGroupStack = new FinanceGroupStack(app, 'FinanceGroupStack', {
 new FinancePermissionStack(app, 'FinancePermissionStack', {
     env,
     group: finGroupStack.finGroup
+});
+
+const anaUserStack = new userNameStack(app, 'AnaylstUserStack', {
+    env,
+    users: ['analyst1', 'analyst2', 'analyst3']
+});
+
+const anaGroupStack = new  AnalystGroupStack(app, 'AnalystGroupStack', {
+    env,
+    users: anaUserStack.users
+});
+
+new AnalystPermissionStack(app, 'AnalystPermissionStack', {
+    env,
+    group: anaGroupStack.anaGroup
 });

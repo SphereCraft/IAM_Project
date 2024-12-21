@@ -16,6 +16,6 @@ export class AnalystGroupStack extends cdk.Stack {
             groupName: 'Analysts'
         });
 
-        props:.users.forEach(user => this.anaGroup.addUser(user));
+        props?.users.forEach(user => this.anaGroup.addUser(user));
     }
 }
